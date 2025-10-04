@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Aggregator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    
+    <header class="news-header text-center py-5 bg-primary text-white"></header>
+        <div class="container">
+            <h1 class="display-3 fw-bold"><i class="fas fa-newspaper me-2 animate-pulse"></i>Top Headlines</h1>
+            <p class="lead fs-4">Stay updated with the latest news from India</p>
+        </div>
+    </header>
+
+    <div class="container py-4">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8 text-center">
+                <div class="input-group shadow-sm">
+                    <label class="input-group-text bg-primary text-white" for="categorySelect">
+                        <i class="fas fa-tag me-1"></i>Category
+                    </label>
+                    <select class="form-select border-primary category-select" id="categorySelect">
+                        <option value="general">General</option>
+                        <option value="technology">Technology</option>
+                        <option value="sports">Sports</option>
+                        <option value="business">Business</option>
+                        <option value="health">Health</option>
+                        <option value="science">Science</option>
+                        <option value="entertainment">Entertainment</option>
+                    </select>
+                    <button class="btn btn-primary fw-bold" id="fetchBtn">
+                        <i class="fas fa-download me-1"></i> Get News
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col text-center">
+                <div class="spinner-border text-primary loading-spinner" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="newsContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 news-container">
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-effect">
+                    <div class="placeholder-image bg-light p-4 text-center">
+                        <i class="fas fa-newspaper fa-3x text-primary"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Select a category</h5>
+                        <p class="card-text text-muted">Choose a news category and click "Get News" to load the latest headlines</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-effect">
+                    <div class="placeholder-image bg-light p-4 text-center">
+                        <i class="fas fa-globe fa-3x text-primary"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Indian News</h5>
+                        <p class="card-text text-muted">Get the latest news from India across various categories</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-effect">
+                    <div class="placeholder-image bg-light p-4 text-center">
+                        <i class="fas fa-bolt fa-3x text-primary"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Real-time Updates</h5>
+                        <p class="card-text text-muted">News is fetched in real-time from reliable sources</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-4 bg-light">
+        <div class="container">
+            <p class="mb-0 text-muted">News Aggregator App &copy; 2023 | Powered by NewsAPI</p>
+        </div>
+    </footer>
+
+<style>
+.hover-effect:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+</style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
